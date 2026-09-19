@@ -1,0 +1,540 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f4f0;
+    color: #2b211b;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado {
+    width: 100%;
+    background-color: white;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 7%;
+
+    border-bottom: 1px solid #e5ddd5;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    font-size: 38px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: #3b261b;
+}
+
+.logo p {
+    font-size: 13px;
+    color: #777;
+    margin-top: 3px;
+}
+
+
+/* =========================
+   MENÚ
+========================= */
+
+.menu {
+    display: flex;
+    gap: 10px;
+}
+
+.menu button {
+    border: none;
+    background-color: transparent;
+
+    padding: 10px 18px;
+
+    font-size: 15px;
+    cursor: pointer;
+
+    color: #3b261b;
+
+    border-radius: 20px;
+}
+
+.menu button:hover {
+    background-color: #eee5dc;
+}
+
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+main {
+    width: 86%;
+    max-width: 1200px;
+
+    margin: 35px auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 330px;
+
+    gap: 30px;
+}
+
+
+/* =========================
+   SECCIONES
+========================= */
+
+.seccion {
+    grid-column: 1;
+}
+
+.titulo-seccion {
+    margin-bottom: 20px;
+}
+
+.titulo-seccion h2 {
+    font-size: 28px;
+    margin-bottom: 5px;
+}
+
+.titulo-seccion p {
+    color: #777;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+.producto {
+    background-color: white;
+
+    border-radius: 12px;
+
+    overflow: hidden;
+
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.2s;
+}
+
+.producto:hover {
+    transform: translateY(-3px);
+}
+
+.producto-imagen {
+    height: 150px;
+
+    background-color: #e8ddd3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 70px;
+}
+
+.producto-info {
+    padding: 15px;
+}
+
+.producto-info h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+.producto-info p {
+    font-size: 13px;
+    color: #777;
+
+    min-height: 32px;
+}
+
+.producto-pie {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-top: 15px;
+}
+
+.precio {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.btn-agregar {
+    border: none;
+
+    background-color: #3b261b;
+    color: white;
+
+    padding: 8px 13px;
+
+    border-radius: 7px;
+
+    cursor: pointer;
+}
+
+.btn-agregar:hover {
+    background-color: #5a3b2b;
+}
+
+
+/* =========================
+   PEDIDO ACTUAL
+========================= */
+
+.pedido {
+    grid-column: 2;
+    grid-row: 1 / span 2;
+
+    background-color: white;
+
+    border-radius: 14px;
+
+    padding: 22px;
+
+    height: fit-content;
+
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+    top: 20px;
+}
+
+.titulo-pedido {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    border-bottom: 1px solid #eee;
+
+    padding-bottom: 15px;
+}
+
+.titulo-pedido h2 {
+    font-size: 21px;
+}
+
+.titulo-pedido span {
+    background-color: #3b261b;
+    color: white;
+
+    width: 25px;
+    height: 25px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   LISTA DEL PEDIDO
+========================= */
+
+.lista-pedido {
+    margin-top: 15px;
+
+    max-height: 300px;
+
+    overflow-y: auto;
+}
+
+.item-pedido {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.item-info h4 {
+    font-size: 14px;
+}
+
+.item-info p {
+    font-size: 13px;
+    color: #777;
+
+    margin-top: 3px;
+}
+
+.controles {
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+}
+
+.controles button {
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #ddd;
+
+    background-color: #f7f7f7;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+}
+
+.pedido-vacio {
+    color: #888;
+
+    text-align: center;
+
+    padding: 25px 0;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.total {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    padding-top: 15px;
+
+    border-top: 1px solid #ddd;
+
+    font-size: 18px;
+}
+
+
+/* =========================
+   BOTÓN CREAR PEDIDO
+========================= */
+
+.btn-pedido {
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 13px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #3b261b;
+
+    color: white;
+
+    font-size: 15px;
+
+    cursor: pointer;
+}
+
+.btn-pedido:hover {
+    background-color: #5a3b2b;
+}
+
+.btn-pedido:disabled {
+    background-color: #aaa;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   MIS PEDIDOS
+========================= */
+
+.pedidos-seccion {
+    margin-top: 10px;
+}
+
+.lista-pedidos {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+.pedido-anterior {
+    background-color: white;
+
+    border-radius: 10px;
+
+    padding: 16px;
+
+    border-left: 5px solid #3b261b;
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.pedido-cabecera {
+    display: flex;
+
+    justify-content: space-between;
+
+    margin-bottom: 8px;
+}
+
+.pedido-cabecera h3 {
+    font-size: 16px;
+}
+
+.estado {
+    background-color: #eee5dc;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+}
+
+.pedido-anterior p {
+    font-size: 13px;
+
+    color: #666;
+
+    margin-top: 5px;
+}
+
+.pedido-total {
+    margin-top: 10px;
+
+    font-weight: bold;
+
+    color: #3b261b;
+}
+
+.pedidos-vacios {
+    background-color: white;
+
+    padding: 25px;
+
+    text-align: center;
+
+    color: #777;
+
+    border-radius: 10px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    margin-top: 50px;
+
+    padding: 25px 7%;
+
+    background-color: #2b1b14;
+
+    color: white;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+.logo-footer {
+    font-weight: bold;
+}
+
+footer p {
+    font-size: 13px;
+    color: #ddd;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    main {
+        grid-template-columns: 1fr;
+    }
+
+    .pedido {
+        grid-column: 1;
+        grid-row: auto;
+
+        position: static;
+    }
+
+    .productos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    .encabezado {
+        flex-direction: column;
+
+        gap: 15px;
+    }
+
+    .productos {
+        grid-template-columns: 1fr;
+    }
+
+    main {
+        width: 92%;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 10px;
+    }
+}
