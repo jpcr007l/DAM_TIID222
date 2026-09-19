@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coffee Code I - Cliente</title>
+
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <!-- ENCABEZADO -->
+    <header class="encabezado">
+
+        <div class="logo">
+            <span class="logo-icon">☕</span>
+
+            <div>
+                <h1>Coffee Code I</h1>
+                <p>Buen café, mejores ideas</p>
+            </div>
+        </div>
+
+        <nav class="menu">
+            <button onclick="mostrarSeccion('productos')">
+                Productos
+            </button>
+
+            <button onclick="mostrarSeccion('pedidos')">
+                Mis pedidos
+            </button>
+        </nav>
+
+    </header>
+
+
+    <!-- CONTENIDO PRINCIPAL -->
+    <main>
+
+        <!-- SECCIÓN DE PRODUCTOS -->
+        <section id="productos" class="seccion">
+
+            <div class="titulo-seccion">
+                <h2>Productos</h2>
+                <p>Elige tus productos favoritos</p>
+            </div>
+
+            <!-- Aquí JavaScript colocara la lista de  los productos disponibles -->
+            <div id="listaProductos" class="productos"></div>
+
+        </section>
+
+
+        <!-- SECCIÓN DEL PEDIDO ACTUAL -->
+        <section class="pedido">
+
+            <div class="titulo-pedido">
+                <h2>Mi pedido</h2>
+                <span id="cantidadPedido">0</span>
+            </div>
+
+            <!-- Aquí JavaScript colocará los productos seleccionados -->
+            <div id="listaPedido" class="lista-pedido">
+
+                <p class="pedido-vacio">
+                    No hay productos en tu pedido.
+                </p>
+
+            </div>
+
+            <div class="total">
+                <span>Total:</span>
+                <strong id="totalPedido">$0.00</strong>
+            </div>
+
+            <button
+                id="btnCrearPedido"
+                class="btn-pedido"
+                onclick="crearPedido()"
+            >
+                Crear pedido
+            </button>
+
+        </section>
+
+
+        <!-- SECCIÓN DE PEDIDOS ANTERIORES -->
+        <section id="pedidos" class="seccion pedidos-seccion">
+
+            <div class="titulo-seccion">
+                <h2>Mis pedidos</h2>
+                <p>Consulta los pedidos que has realizado</p>
+            </div>
+
+            <!-- Aquí JavaScript colocará los pedidos -->
+            <div id="listaPedidos" class="lista-pedidos">
+
+                <p class="pedidos-vacios">
+                    Todavía no tienes pedidos.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- PIE DE PÁGINA -->
+    <footer>
+
+        <div class="logo-footer">
+            ☕ Coffee Code I
+        </div>
+
+        <p>Buen café, mejores ideas.</p>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+    <script src="Script.js"></script>
+
+</body>
+</html>
