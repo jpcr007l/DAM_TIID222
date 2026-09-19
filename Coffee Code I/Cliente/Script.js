@@ -488,3 +488,7 @@ mostrarPedidos();
 actualizarPedido();
 
 console.log("Coffee Code I - Área Cliente iniciada.");
+
+
+
+// Hasta aqui se realizo el avanze individual - Perez Juarez Javier antonio
