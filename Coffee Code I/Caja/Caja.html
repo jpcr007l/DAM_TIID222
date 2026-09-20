@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Caja - Coffee Code</title>
+
+    <link
+        rel="stylesheet"
+        href="Caja.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <main class="contenedor">
+
+
+        <!-- =========================
+             ENCABEZADO
+        ========================== -->
+
+        <header class="encabezado">
+
+            <h1>
+                Caja de la Cafetería
+            </h1>
+
+            <p>
+                Consulta y administra los pedidos recibidos.
+            </p>
+
+        </header>
+
+
+        <!-- =========================
+             LISTA DE PEDIDOS
+        ========================== -->
+
+        <section class="seccion-pedidos">
+
+            <h2>
+                Pedidos recibidos
+            </h2>
+
+
+            <div class="tabla-contenedor">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Pedido
+                            </th>
+
+                            <th>
+                                Productos
+                            </th>
+
+                            <th>
+                                Total
+                            </th>
+
+                            <th>
+                                Estado
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tablaPedidos">
+
+                        <tr>
+
+                            <td
+                                colspan="4"
+                                class="mensaje-vacio"
+                            >
+                                No hay pedidos registrados.
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="Caja.js"></script>
+
+
+</body>
+
+</html>
