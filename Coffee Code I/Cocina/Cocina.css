@@ -1,0 +1,345 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    margin: 0;
+
+    padding: 30px;
+
+    background-color: #f4f4f9;
+
+    color: #2b211b;
+
+}
+
+
+/* =========================
+   TÍTULO PRINCIPAL
+========================= */
+
+h1 {
+
+    color: #4a2c2a;
+
+    margin: 0 0 25px 0;
+
+    font-size: 32px;
+
+}
+
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+
+.container {
+
+    display: grid;
+
+    grid-template-columns:
+        280px 1fr;
+
+    gap: 20px;
+
+    width: 100%;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   TARJETAS
+========================= */
+
+.card {
+
+    background-color: white;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, 0.10);
+
+}
+
+
+.card h2 {
+
+    margin-top: 0;
+
+    margin-bottom: 20px;
+
+    color: #4a2c2a;
+
+}
+
+
+/* =========================
+   FORMULARIO
+========================= */
+
+form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+input,
+select,
+button {
+
+    padding: 10px;
+
+    font-size: 14px;
+
+    border: 1px solid #ccc;
+
+    border-radius: 4px;
+
+}
+
+
+input,
+select {
+
+    background-color: white;
+
+}
+
+
+button {
+
+    background-color: #6f4e37;
+
+    color: white;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+}
+
+
+button:hover {
+
+    background-color: #523625;
+
+}
+
+
+/* =========================
+   TABLAS
+========================= */
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-top: 10px;
+
+}
+
+
+th,
+td {
+
+    border: 1px solid #ddd;
+
+    padding: 10px;
+
+    text-align: left;
+
+}
+
+
+th {
+
+    background-color: #6f4e37;
+
+    color: white;
+
+}
+
+
+td {
+
+    background-color: white;
+
+}
+
+
+/* =========================
+   BOTONES DE PRODUCTOS
+========================= */
+
+.btn-edit {
+
+    background-color: #f0ad4e;
+
+    margin-right: 5px;
+
+}
+
+
+.btn-delete {
+
+    background-color: #d9534f;
+
+}
+
+
+/* =========================
+   SECCIÓN DE PEDIDOS
+========================= */
+
+.pedidos-container {
+
+    display: block;
+
+    width: 100%;
+
+    margin-bottom: 0;
+
+}
+
+
+.pedidos-card {
+
+    width: 100%;
+
+}
+
+
+/* =========================
+   DESCRIPCIÓN DE PEDIDOS
+========================= */
+
+.descripcion-pedidos {
+
+    color: #555;
+
+    margin-bottom: 20px;
+
+}
+
+
+/* =========================
+   PEDIDOS VACÍOS
+========================= */
+
+.mensaje-vacio {
+
+    text-align: center;
+
+    color: #777;
+
+    padding: 20px;
+
+}
+
+
+/* =========================
+   BOTÓN MARCAR COMO LISTO
+========================= */
+
+.btn-listo {
+
+    background-color: #6f4e37;
+
+    white-space: nowrap;
+
+}
+
+
+.btn-listo:hover {
+
+    background-color: #523625;
+
+}
+
+
+/* =========================
+   BOTÓN ENTREGADO
+========================= */
+
+.btn-entregado {
+
+    background-color: #5cb85c;
+
+    white-space: nowrap;
+
+}
+
+
+.btn-entregado:hover {
+
+    background-color: #449d44;
+
+}
+
+
+/* =========================
+   ESTADOS
+========================= */
+
+.estado-proceso {
+
+    font-weight: bold;
+
+    color: #6f4e37;
+
+}
+
+
+.pedido-esperando {
+
+    color: #8a6d3b;
+
+    font-weight: bold;
+
+}
+
+
+.pedido-finalizado {
+
+    color: #4a8f4a;
+
+    font-weight: bold;
+
+}
+
+
+/* =========================
+   ESPACIADO DE LA TABLA
+========================= */
+
+.pedidos-table {
+
+    margin-top: 20px;
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+}

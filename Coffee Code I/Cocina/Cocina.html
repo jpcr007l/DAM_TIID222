@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Módulo Cocina - CoffeeCode</title>
+
+    <link
+        rel="stylesheet"
+        href="Cocina.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <h1>
+        CoffeeCode - Gestión de Cocina
+    </h1>
+
+
+    <!-- =========================
+         ADMINISTRACIÓN DE PRODUCTOS
+    ========================== -->
+
+    <div class="container">
+
+
+        <div class="card">
+
+            <h2 id="form-title">
+                Agregar Producto
+            </h2>
+
+
+            <form id="product-form">
+
+                <input
+                    type="hidden"
+                    id="prod-index"
+                >
+
+
+                <input
+                    type="text"
+                    id="prod-nombre"
+                    placeholder="Nombre del platillo/bebida"
+                    required
+                >
+
+
+                <input
+                    type="number"
+                    id="prod-precio"
+                    placeholder="Precio ($)"
+                    step="0.5"
+                    required
+                >
+
+
+                <select id="prod-categoria">
+
+                    <option value="Bebidas">
+                        Bebida
+                    </option>
+
+                    <option value="Alimentos">
+                        Alimento
+                    </option>
+
+                    <option value="Postres">
+                        Postre
+                    </option>
+
+                </select>
+
+
+                <button
+                    type="submit"
+                    id="btn-save"
+                >
+                    Agregar a Cocina
+                </button>
+
+            </form>
+
+        </div>
+
+
+        <!-- =========================
+             TABLA DE PRODUCTOS
+        ========================== -->
+
+        <div
+            class="card"
+            style="flex-grow: 1;"
+        >
+
+            <h2>
+                Menú e Inventario de Cocina
+            </h2>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            #
+                        </th>
+
+                        <th>
+                            Nombre
+                        </th>
+
+                        <th>
+                            Precio
+                        </th>
+
+                        <th>
+                            Categoría
+                        </th>
+
+                        <th>
+                            Acciones
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tabla-productos">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         PEDIDOS
+    ========================== -->
+
+    <div class="container pedidos-container">
+
+
+        <div class="card pedidos-card">
+
+            <h2>
+                Pedidos de Cocina
+            </h2>
+
+
+            <p class="descripcion-pedidos">
+                Consulta y actualiza el estado
+                de los pedidos recibidos.
+            </p>
+
+
+            <table>
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Pedido
+                        </th>
+
+                        <th>
+                            Productos
+                        </th>
+
+                        <th>
+                            Total
+                        </th>
+
+                        <th>
+                            Estado
+                        </th>
+
+                        <th>
+                            Acción
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody id="tabla-pedidos">
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="Cocina.js"></script>
+
+
+</body>
+
+</html>
