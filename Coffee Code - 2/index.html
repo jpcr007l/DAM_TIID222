@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Coffee Code</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+
+<body>
+
+    <header>
+
+        <h1>COFFEE CODE</h1>
+
+        <p>Sistema de cafetería</p>
+
+    </header>
+
+
+    <main>
+
+        <h2>Áreas del sistema</h2>
+
+        <button onclick="mostrarCliente()">Cliente</button>
+
+        <button onclick="mostrarCaja()">Caja</button>
+
+        <button onclick="mostrarCocina()">Cocina</button>
+
+
+        <!-- CLIENTE -->
+
+        <section id="cliente" style="display: none;">
+
+            <h2>Cliente</h2>
+
+
+            <h3>Consulta</h3>
+
+            <button onclick="mostrarProductos()">Productos</button>
+
+            <button onclick="mostrarPedidoActual()">Mi pedido</button>
+
+            <button onclick="mostrarPedidosCliente()">Mis pedidos</button>
+
+
+            <h3>Pedido</h3>
+
+            <button onclick="agregarProductoPedido()">Agregar</button>
+
+            <button onclick="modificarCantidad()">Modificar</button>
+
+            <button onclick="crearPedido()">Crear pedido</button>
+
+
+            <p id="resultadoCliente"></p>
+
+        </section>
+
+
+        <!-- CAJA -->
+
+        <section id="caja" style="display: none;">
+
+            <h2>Caja</h2>
+
+
+            <h3>Pedidos</h3>
+
+            <button onclick="mostrarPedidosCaja()">Consultar pedidos</button>
+
+            <button onclick="enviarPedidoCocina()">Enviar a cocina</button>
+
+
+            <p id="resultadoCaja"></p>
+
+        </section>
+
+
+        <!-- COCINA -->
+
+        <section id="cocina" style="display: none;">
+
+            <h2>Cocina</h2>
+
+
+            <h3>Productos</h3>
+
+            <button onclick="listarProductos()">Productos</button>
+
+            <button onclick="agregarProducto()">Agregar</button>
+
+            <button onclick="editarProducto()">Editar</button>
+
+            <button onclick="eliminarProducto()">Eliminar</button>
+
+
+            <h3>Pedidos</h3>
+
+            <button onclick="mostrarPedidosCocina()">Pedidos</button>
+
+            <button onclick="marcarListo()">Listo</button>
+
+            <button onclick="marcarEntregado()">Entregar</button>
+
+
+            <h3>Consultas</h3>
+
+            <button onclick="buscarProductos()">Buscar</button>
+
+
+            <p id="resultadoCocina"></p>
+
+        </section>
+
+    </main>
+
+
+    <script src="CoffeeCode.js"></script>
+
+</body>
+
+</html>
