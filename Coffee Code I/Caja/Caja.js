@@ -5,7 +5,6 @@
 const tablaPedidos =
     document.getElementById("tablaPedidos");
 
-
 /* =========================
    OBTENER PEDIDOS
 ========================= */
@@ -17,7 +16,6 @@ function obtenerPedidos() {
     ) || [];
 
 }
-
 
 /* =========================
    GUARDAR PEDIDOS
@@ -31,7 +29,6 @@ function guardarPedidos(pedidos) {
     );
 
 }
-
 
 /* =========================
    MOSTRAR PEDIDOS
