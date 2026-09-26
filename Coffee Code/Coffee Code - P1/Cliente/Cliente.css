@@ -1,0 +1,729 @@
+/* =========================
+   CONFIGURACIÓN GENERAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f4f0;
+    color: #2b211b;
+}
+
+
+/* =========================
+   ENCABEZADO
+========================= */
+
+.encabezado {
+    background-color: white;
+    border-bottom: 1px solid #e5ddd5;
+
+    padding: 18px 7%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo h1 {
+    font-size: 25px;
+    margin-bottom: 3px;
+}
+
+
+.logo p {
+    color: #75665d;
+    font-size: 14px;
+}
+
+
+/* =========================
+   MENÚ
+========================= */
+
+.menu {
+    display: flex;
+    gap: 30px;
+}
+
+
+.menu button {
+    background: none;
+    border: none;
+
+    color: #2b211b;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    padding: 8px 0;
+}
+
+
+.menu button:hover {
+    color: #6f4e37;
+}
+
+
+/* =========================
+   CONTENIDO PRINCIPAL
+========================= */
+
+main {
+    width: 80%;
+    max-width: 1200px;
+
+    margin: 35px auto;
+}
+
+
+/* =========================
+   TÍTULO DE PRODUCTOS
+========================= */
+
+.titulo-seccion {
+    margin-bottom: 25px;
+}
+
+
+.titulo-seccion h2 {
+    font-size: 30px;
+    margin-bottom: 6px;
+}
+
+
+.titulo-seccion p {
+    color: #75665d;
+    font-size: 16px;
+}
+
+
+/* =========================
+   CATEGORÍAS
+========================= */
+
+.categoria {
+    padding-bottom: 30px;
+}
+
+
+.titulo-categoria {
+    font-size: 20px;
+
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+
+    border-bottom: 2px solid #e5ddd5;
+}
+
+
+/* =========================
+   PRODUCTOS
+========================= */
+
+.productos {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.producto {
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 18px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+
+    transition: 0.2s;
+}
+
+
+.producto:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 14px rgba(0, 0, 0, 0.12);
+}
+
+
+.producto h4 {
+    font-size: 18px;
+
+    margin-bottom: 10px;
+}
+
+
+.precio {
+    display: block;
+
+    font-size: 17px;
+
+    font-weight: bold;
+
+    color: #6f4e37;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================
+   BOTÓN AGREGAR
+========================= */
+
+/*
+   Se aplica directamente al botón
+   que está dentro de cada producto.
+*/
+
+.producto button {
+
+    width: 100%;
+
+    background-color: #6f4e37;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 10px 18px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s,
+        transform 0.2s,
+        box-shadow 0.2s;
+}
+
+
+/* Cuando pasamos el mouse */
+
+.producto button:hover {
+
+    background-color: #5a3e2b;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.15);
+}
+
+
+/* Cuando presionamos */
+
+.producto button:active {
+
+    transform: translateY(0);
+
+    box-shadow: none;
+}
+
+
+/* =========================
+   PANEL MI PEDIDO
+========================= */
+
+.pedido {
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 22px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.08);
+
+    position: sticky;
+
+    top: 20px;
+}
+
+
+.titulo-pedido {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 15px;
+
+    border-bottom: 1px solid #e5ddd5;
+
+    margin-bottom: 15px;
+}
+
+
+.titulo-pedido h2 {
+    font-size: 21px;
+}
+
+
+.titulo-pedido span {
+
+    background-color: #4b2e20;
+
+    color: white;
+
+    width: 26px;
+    height: 26px;
+
+    border-radius: 50%;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* =========================
+   LISTA DEL PEDIDO
+========================= */
+
+.lista-pedido {
+    margin-bottom: 20px;
+}
+
+
+.pedido-vacio {
+
+    text-align: center;
+
+    color: #75665d;
+
+    padding: 25px 5px;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   PRODUCTOS DEL PEDIDO
+========================= */
+
+.item-pedido {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #eee6df;
+}
+
+
+.item-info h4 {
+
+    font-size: 15px;
+
+    margin-bottom: 4px;
+}
+
+
+.item-info p {
+
+    color: #75665d;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   CONTROLES DE CANTIDAD
+========================= */
+
+.controles {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+}
+
+
+.controles button {
+
+    width: 25px;
+    height: 25px;
+
+    border: 1px solid #d8cec5;
+
+    background-color: white;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+.controles button:hover {
+
+    background-color: #f0e8e1;
+}
+
+
+.controles span {
+
+    min-width: 18px;
+
+    text-align: center;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.total {
+
+    border-top: 1px solid #e5ddd5;
+
+    padding-top: 15px;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    font-size: 16px;
+}
+
+
+.total strong {
+
+    font-size: 18px;
+
+    color: #4b2e20;
+}
+
+
+/* =========================
+   BOTÓN CREAR PEDIDO
+========================= */
+
+.btn-pedido {
+
+    width: 100%;
+
+    margin-top: 18px;
+
+    padding: 12px;
+
+    background-color: #3d251b;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.btn-pedido:hover {
+
+    background-color: #291811;
+}
+
+
+/* =========================
+   MIS PEDIDOS
+========================= */
+
+.pedidos-seccion {
+
+    margin-top: 40px;
+}
+
+
+.lista-pedidos {
+
+    background-color: white;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    box-shadow:
+        0 3px 10px rgba(0, 0, 0, 0.06);
+}
+
+
+.pedidos-vacios {
+
+    text-align: center;
+
+    color: #75665d;
+
+    padding: 20px;
+}
+
+
+/* =========================
+   PEDIDOS GUARDADOS
+========================= */
+
+.pedido-anterior {
+
+    padding: 18px 0;
+
+    border-bottom: 1px solid #e5ddd5;
+}
+
+
+.pedido-anterior:last-child {
+
+    border-bottom: none;
+}
+
+
+.pedido-cabecera {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+
+.pedido-cabecera h3 {
+
+    font-size: 17px;
+}
+
+
+.estado {
+
+    background-color: #f1e4d8;
+
+    color: #6f4e37;
+
+    padding: 5px 10px;
+
+    border-radius: 15px;
+
+    font-size: 12px;
+
+    font-weight: bold;
+}
+
+
+.pedido-anterior p {
+
+    color: #75665d;
+
+    font-size: 14px;
+
+    margin-bottom: 7px;
+}
+
+
+.pedido-anterior .pedido-total {
+
+    color: #2b211b;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+
+footer {
+
+    background-color: #2d1b14;
+
+    color: white;
+
+    padding: 25px 7%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+}
+
+
+.logo-footer {
+
+    font-weight: bold;
+}
+
+
+footer p {
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   DISEÑO PRINCIPAL
+========================= */
+
+@media (min-width: 900px) {
+
+    main {
+
+        display: grid;
+
+        grid-template-columns:
+            1fr 330px;
+
+        gap: 30px;
+    }
+
+
+    #productos {
+
+        grid-column: 1;
+    }
+
+
+    .pedido {
+
+        grid-column: 2;
+
+        grid-row: 1;
+    }
+
+
+    .pedidos-seccion {
+
+        grid-column: 1;
+    }
+
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 899px) {
+
+    main {
+
+        width: 90%;
+    }
+
+
+    .productos {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .pedido {
+
+        position: static;
+    }
+
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 600px) {
+
+    .encabezado {
+
+        padding: 15px 5%;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        align-items: flex-start;
+    }
+
+
+    .menu {
+
+        gap: 20px;
+    }
+
+
+    main {
+
+        width: 90%;
+
+        margin: 25px auto;
+    }
+
+
+    .productos {
+
+        grid-template-columns: 1fr;
+    }
+
+
+    .titulo-seccion h2 {
+
+        font-size: 26px;
+    }
+
+
+    footer {
+
+        flex-direction: column;
+
+        gap: 10px;
+
+        text-align: center;
+    }
+
+}
