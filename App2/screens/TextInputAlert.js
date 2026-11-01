@@ -1,95 +1,61 @@
+
 /* =========================================================
    1. IMPORTACIONES
    ========================================================= */
 import { useState } from 'react';
-import { View, Text, TextInput, Alert, Pressable, StyleSheet, Platform } from 'react-native';
-import { StatusBar } from 'expo-status-bar';
+import { View, Text, TextInput, Pressable, StyleSheet } from 'react-native';
+
+
 
 /* =========================================================
-   2. COMPONENTE PRINCIPAL
+   2. COMPONENTE PRINCIPAL (MAIN)
    ========================================================= */
 export function TextInputAlert() {
-    // Guardamos los datos introducidos por el usuario.
+
+    // 2.1. ESTADOS
     const [nombre, setNombre] = useState('');
     const [correo, setCorreo] = useState('');
 
-    // Función para registrar y validar los datos.
+    // 2.2. ALERT: REGISTRO Y MENSAJES
     const registrarDatos = () => {
-        // Comprobamos que los campos estén completos.
         if (!nombre.trim() || !correo.trim()) {
-            if (Platform.OS === 'web') {
-                globalThis.alert('Completa todos los campos.');
-            } else {
-                Alert.alert('Campos obligatorios', 'Completa todos los campos.');
-            }
+            alert('Completa todos los campos.');
             return;
         }
 
-        // Comprobamos que el correo tenga un formato básico.
-        if (!correo.includes('@') || !correo.includes('.')) {
-            if (Platform.OS === 'web') {
-                globalThis.alert('Introduce un correo válido.');
-            } else {
-                Alert.alert('Correo no válido', 'Introduce un correo válido.');
-            }
-            return;
-        }
-
-        // Preparamos el mensaje con los datos introducidos.
-        const mensaje = `Nombre: ${nombre.trim()}\nCorreo: ${correo.trim()}`;
-
-        // Mostramos los datos según la plataforma.
-        if (Platform.OS === 'web') {
-            globalThis.alert(`Registro exitoso\n\n${mensaje}`);
-            setNombre('');
-            setCorreo('');
-        } else {
-            Alert.alert('Registro exitoso', mensaje, [
-                { text: 'Aceptar', onPress: () => { setNombre(''); setCorreo(''); } }
-            ]);
-        }
+        alert(`Registro exitoso\n\nNombre: ${nombre}\nCorreo: ${correo}`);
+        limpiarCampos();
     };
 
-    // Función para limpiar los campos con confirmación.
-    const limpiarFormulario = () => {
-        if (Platform.OS === 'web') {
-            // En navegador, confirm() permite aceptar o cancelar.
-            if (globalThis.confirm('¿Deseas borrar los datos?')) {
-                setNombre('');
-                setCorreo('');
-            }
-        } else {
-            // En dispositivos móviles, usamos Alert.
-            Alert.alert('Limpiar formulario', '¿Deseas borrar los datos?', [
-                { text: 'Cancelar', style: 'cancel' },
-                { text: 'Limpiar', style: 'destructive', onPress: () => { setNombre(''); setCorreo(''); } }
-            ]);
-        }
+    // 2.3. LIMPIAR DATOS
+    const limpiarCampos = () => {
+        setNombre('');
+        setCorreo('');
     };
 
-    /* -----------------------------------------------------
-       3. INTERFAZ VISUAL
-       ----------------------------------------------------- */
     return (
         <View style={styles.contenedor}>
-            <StatusBar style="auto" />
 
-            {/* Título y descripción de la práctica. */}
+            {/* Título y descripción. */}
             <Text style={styles.titulo}>Práctica: TextInput & Alert</Text>
-            <Text style={styles.descripcion}>Introduce tus datos para realizar un registro.</Text>
+            <Text style={styles.descripcion}>
+                Introduce tus datos para realizar un registro.
+            </Text>
 
-            {/* Campo para escribir el nombre. */}
+            {/* -------------------------------------------------
+                TEXTINPUT: CAPTURA DEL NOMBRE
+               ------------------------------------------------- */}
             <Text style={styles.etiqueta}>Nombre completo</Text>
             <TextInput
                 style={styles.input}
                 placeholder="Escribe tu nombre"
                 value={nombre}
                 onChangeText={setNombre}
-                autoCapitalize="words"
-                maxLength={50}
             />
 
-            {/* Campo para escribir el correo electrónico. */}
+            {/* -------------------------------------------------
+                TEXTINPUT: CAPTURA DEL CORREO
+               ------------------------------------------------- */}
             <Text style={styles.etiqueta}>Correo electrónico</Text>
             <TextInput
                 style={styles.input}
@@ -98,27 +64,41 @@ export function TextInputAlert() {
                 onChangeText={setCorreo}
                 keyboardType="email-address"
                 autoCapitalize="none"
-                maxLength={100}
             />
 
-            {/* Botón para registrar los datos. */}
-            <Pressable style={styles.botonPrincipal} onPress={registrarDatos}>
+            {/* -------------------------------------------------
+                ALERT: BOTÓN PARA REGISTRAR LOS DATOS
+               ------------------------------------------------- */}
+            <Pressable
+                style={styles.botonPrincipal}
+                onPress={registrarDatos}
+            >
                 <Text style={styles.textoBoton}>Registrar usuario</Text>
             </Pressable>
 
-            {/* Botón para limpiar el formulario. */}
-            <Pressable style={styles.botonSecundario} onPress={limpiarFormulario}>
-                <Text style={styles.textoBotonSecundario}>Limpiar formulario</Text>
+            {/* -------------------------------------------------
+                BOTÓN PARA LIMPIAR EL FORMULARIO
+               ------------------------------------------------- */}
+            <Pressable
+                style={styles.botonSecundario}
+                onPress={limpiarCampos}
+            >
+                <Text style={styles.textoBotonSecundario}>
+                    Limpiar formulario
+                </Text>
             </Pressable>
+
         </View>
     );
 }
 
+
 /* =========================================================
-   4. ESTILOS
+   3. ESTILOS
    ========================================================= */
 const styles = StyleSheet.create({
-    // Contenedor principal de la pantalla.
+
+    // Contenedor principal.
     contenedor: {
         flex: 1,
         backgroundColor: '#FFFFFF',
@@ -197,4 +177,4 @@ const styles = StyleSheet.create({
         fontSize: 15,
         fontWeight: '600'
     }
-}); 
+});
