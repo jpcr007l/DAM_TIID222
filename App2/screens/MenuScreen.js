@@ -1,4 +1,3 @@
-
 /* =========================================================
    1. ZONA DE IMPORTACIONES
    ========================================================= */
@@ -11,7 +10,7 @@ import Tarjetas from './Tarjetas';
 import { SafeScreen } from './SafeScreen';
 import PressableSwitch from './PressableSwitch';
 import { TextInputAlert } from './TextInputAlert';
-import { FlatListSectionList } from './FlatListSectionList';
+import FlatListSectionList from './FlatListSectionList';
 import { ImageBackgroundSplashScreen } from './ImageBackgroundSplashScreen';
 import { ModalBottomSheet } from './ModalBottomSheet';
 import { ActivityIndicatorKeyboardAvoidingView } from './ActivityIndicatorKeyboardAvoidingView';
@@ -25,6 +24,7 @@ export default function MenuScreen() {
     const [screen, setScreen] = useState('menu');
 
     switch (screen) {
+
         case 'tarjetas':
             return <Tarjetas />;
 
@@ -53,6 +53,7 @@ export default function MenuScreen() {
         default:
             return (
                 <ScrollView contentContainerStyle={styles.container}>
+
                     <Text style={styles.titulo}>
                         Menú de prácticas
                     </Text>
@@ -114,6 +115,7 @@ export default function MenuScreen() {
                     </View>
 
                     <StatusBar style="auto" />
+
                 </ScrollView>
             );
     }
