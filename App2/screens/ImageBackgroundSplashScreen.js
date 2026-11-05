@@ -139,3 +139,6 @@ const styles = StyleSheet.create({
     },
 
 });
+
+// Actividad realizada 04/11/2026
+
